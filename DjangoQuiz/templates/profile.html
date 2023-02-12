@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}My profile{% endblock %}
+
+{% block content %}
+    <h3>Username: {{ user.username }}</h3>
+    <h3>name: {{ user.first_name }}</h3>
+    <h3>last name: {{ user.last_name }}</h3>
+    <h3>email: {{ user.email }}</h3>
+    <a class="nav-link" href="{% url 'score_list' %}">My scores</a>
+    <a class="nav-link" href="{% url 'edit_profile' %}">Edit profile</a>
+{% endblock %}

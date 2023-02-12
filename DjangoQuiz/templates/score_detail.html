@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz Score Detail{% endblock %}
+
+{% block content %}
+  <h1>Score:</h1>
+  {% if correct_answers is not None %}
+    <p>You got {{ correct_answers }} % of correct answers out of {{ quiz.get_questions.count }} questions.</p>
+  {% else %}
+    <p>No questions found for this quiz.</p>
+  {% endif %}
+{% endblock %}

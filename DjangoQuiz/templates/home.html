@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Quizly{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Quizly {{ user.username }} :)</h1>
+    {% if user.is_authenticated %}
+        <h2>What is Quizly ? </h2>
+        <p> Quizly is a website made for teachers and students. <br>
+            Teachers create quizzes and students take them !</p>
+        <p>Go to the "Quizzes" section to start taking quizzes ! </p>
+    {% else %}
+        <p><a href="{% url 'login' %}" class="btn btn-primary">Login</a> to start taking quizzes</p>
+    {% endif %}
+{% endblock %}

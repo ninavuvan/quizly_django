@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Quiz Scores</h1>
+  {% if object_list %}
+    <ul>
+      {% for quiz_response in object_list %}
+        <li>
+          <h2>{{ quiz_response.quiz }}</h2>
+          <p>Score: {{ quiz_response.get_score }}/{{ quiz_response.quiz.get_questions.count }}</p>
+          <a href="{% url 'score_detail' quiz_response.id %}">View Details</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No quiz scores found.</p>
+  {% endif %}
+{% endblock %}
